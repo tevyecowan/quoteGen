@@ -16,6 +16,9 @@ var createImage = function(x, src, title) {
 	return x;
 }
 
+//test image 
+img = new Image();
+img.src = "images/assataShakur.jpg";
 //image array
 var pics = [
 ]
@@ -42,5 +45,17 @@ function newQuote() {
 	var picNum = Math.floor(Math.random() * (pics.length));
 	document.getElementById('quoteDisplay').innerHTML = quotes[quoteNum];
 	document.getElementById('nameDisplay').innerHTML = pics[picNum].title;
-   	context.drawImage(pics[picNum], 10, 10);
+   	//context.drawImage(pics[picNum], 10, 10);*/
+   	context.drawImage(pics[picNum], 0, 0);
+context.font = "12pt Verdana";
+
+    //redraw image
+    context.clearRect(0,0,canvas.width,canvas.height);
+    context.drawImage(pics[picNum], 0, 0);
+    //refill text
+    context.fillStyle = "red";
+    context.fillText(quotes[quoteNum],40,80);
+$('button').click(function(){
+    console.log(context.getImageData(50, 50, 100, 100));
+});
 }
