@@ -1,10 +1,14 @@
 html, body {
-  overflow-x: hidden;
-  overflow-y: hidden; 
   height: 100%;
   width: 100%;
   position: absolute;
   background-color: black;
+}
+
+h1 {
+  color: white;
+  font-family: Helvetica;
+  text-align: center;
 }
 
 span {
@@ -13,31 +17,16 @@ span {
   filter: alpha(opacity=75); /* For IE8 and earlier */
 }
 
-#content {
-  height: 45em;
-} p {
-  max-width: 30em;
-  color: white;
-  font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
-  letter-spacing:0.1em;
-  text-align:center;
-  margin: 40px auto;
-  text-transform: lowercase;
-  line-height: 145%;
-  font-size: 2em;
-  font-variant: small-caps;
-}
-
 #buttonDiv {
   padding-bottom: 5em;
   position: fixed;
   width: 100%;
   bottom: 2em;
-    margin: 0;
+  margin: 0;
   padding: 0.5em;
   list-style-type: none;
   text-align: center;
-    width: 100%;
+  width: 100%;
   height: 100%;
   position:relative;
 
