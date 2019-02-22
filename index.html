@@ -5,18 +5,17 @@
 	<title>Quote Gen</title>
 	<meta charset="utf-8"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 	<h1>Simple Quote Generator</h1>
+	<div id="buttonDiv">
+		<canvas id="myCanvas"></canvas>
+		<ul>
 	
-	<canvas id="myCanvas"></canvas>
-    
-    <div id="nameDisplay"></div>
-	<div id="quoteDisplay">
-
+		<button id="gen", onclick="newQuote()">New Quote</button>
+		</ul>
 	</div>
-	<button onclick="newQuote()">New Quote</button>
-
-	<script src="javascript.js"></script>
+<script src="javascript.js"></script>
 </body>
 </html>
