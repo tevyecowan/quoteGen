@@ -1,10 +1,10 @@
 //quotes array
 var quotes = [
-'Non ut iusto nihil sapiente aut quo amet vel.',
-'Ea reprehenderit quis aut cupiditate ut.',
-'Consequatur qui ea corporis enim dolorem non quas.',
-'Cumque eum dicta deleniti.',
-'Quis molestiae veritatis nihil rem ipsam.'
+'\"Non ut iusto nihil sapiente aut quo amet vel.\"',
+'\"Ea reprehenderit quis aut cupiditate ut.\"',
+'\"Consequatur qui ea corporis enim dolorem non quas.\"',
+'\"Cumque eum dicta deleniti.\"',
+'\"Quis molestiae veritatis nihil rem ipsam.\"'
 ]
 
 //image factory
@@ -16,9 +16,6 @@ var createImage = function(x, src, title) {
 	return x;
 }
 
-//test image 
-img = new Image();
-img.src = "images/assataShakur.jpg";
 //image array
 var pics = [
 ]
@@ -84,13 +81,11 @@ function newQuote() {
 	var quoteNum = Math.floor(Math.random() * (quotes.length));
 	var picNum = Math.floor(Math.random() * (pics.length));
 
-	document.getElementById('quoteDisplay').innerHTML = quotes[quoteNum];
-	document.getElementById('nameDisplay').innerHTML = pics[picNum].title;
 
    	chosenPic = pics[picNum];
    	chosenQuote = quotes[quoteNum];
    	context.drawImage(chosenPic, 0, 0);
-	context.font = "24pt Verdana";
+	context.font = "24pt Helvetica";
     //redraw image
     context.clearRect(0,0,canvas.width,canvas.height);
     context.drawImage(chosenPic, 0, 0);
