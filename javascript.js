@@ -32,23 +32,61 @@ pics.push(createImage("thomasSankara", "images/thomasSankara.jpeg", "Thomas Sank
 pics.push(createImage("kathleenCleaver", "images/kathleenCleaver.png", "Kathleen Cleaver"));
 
 //create canvas/info
-  var canvas = document.getElementById('myCanvas'),
-      width = +(canvas.width = 500),
-      height = +(canvas.height = 500),
-  	  context = canvas.getContext('2d');
+var layer1;
+var layer2;
+var ctx1;
+var ctx2;
+var WIDTH = 500;
+var HEIGHT = 500;
 
-  var testText = "this is sasdfasdfasdfasdfasdfasdf ome text to test the text wrap function"
+function init() {
+layer1 = document.getElementById("layer1");
+ctx1 = layer1.getContext("2d");
+layer2 = document.getElementById("layer2");
+ctx2 = layer2.getContext("2d");
+setInterval(drawAll, 20);
+}
+
+function drawAll() {
+draw1();
+draw2();
+}
+
+function draw1() {
+  ctx1.clearRect(0, 0, WIDTH, HEIGHT);
+  ctx1.font = "24pt arial";
+    //redraw image
+  ctx1.drawImage(chosenPic, 0, 0);
+    //refill text
+  ctx1.fillStyle = "red", 74;
+   
+  var lines = fragmentText((chosenQuote + "- " + chosenPic.title), 300 - parseInt(ctx1.font,0));
+  lines.forEach(function(line, i) {
+    console.log(i);
+    ctx1.fillText(line, 25 / 2, (i + 10) * parseInt(ctx1.font,0));
+  });
+}
+
+function draw2() {
+  ctx2.clearRect(0, 0, WIDTH, HEIGHT);
+  ctx2.globalAlpha = 0.35;
+  ctx2.fillStyle = "grey";
+  ctx2.fillRect(5, 8* parseInt(ctx1.font,0), 300 - parseInt(ctx1.font,0), 175 - parseInt(ctx1.font,0));
+}
+
+
+
 
 //function to split text into lines/wrap text
 function fragmentText(text, maxWidth) {
     var words = text.split(' '),
         lines = [],
         line = "";
-    if (context.measureText(text).width < maxWidth) {
+    if (ctx1.measureText(text).width < maxWidth) {
         return [text];
     }
     while (words.length > 0) {
-        while (context.measureText(words[0]).width >= maxWidth) {
+        while (ctx1.measureText(words[0]).width >= maxWidth) {
             var tmp = words[0];
             words[0] = tmp.slice(0, -1);
             if (words.length > 1) {
@@ -57,7 +95,7 @@ function fragmentText(text, maxWidth) {
                 words.push(tmp.slice(-1));
             }
         }
-        if (context.measureText(line + words[0]).width < maxWidth) {
+        if (ctx1.measureText(line + words[0]).width < maxWidth) {
             line += words.shift() + " ";
         } else {
             lines.push(line);
@@ -70,32 +108,23 @@ function fragmentText(text, maxWidth) {
     return lines;
 }
 
+
   
   //newQuote function: 
   //clear canvas, create RNGs, print quotes+name to display,
   // draw image, fill quote text on image
   //
 function newQuote() {
-	context.clearRect(0, 0, canvas.width, canvas.height);
 
 	var quoteNum = Math.floor(Math.random() * (quotes.length));
 	var picNum = Math.floor(Math.random() * (pics.length));
 
+ 	chosenPic = pics[picNum];
+ 	chosenQuote = quotes[quoteNum];
 
-   	chosenPic = pics[picNum];
-   	chosenQuote = quotes[quoteNum];
-   	context.drawImage(chosenPic, 0, 0);
-	context.font = "24pt Helvetica";
-    //redraw image
-    context.clearRect(0,0,canvas.width,canvas.height);
-    context.drawImage(chosenPic, 0, 0);
-    //refill text
-    context.fillStyle = "red";
-    var lines = fragmentText((chosenQuote + "- " + chosenPic.title), 300 - parseInt(context.font,0));
-    lines.forEach(function(line, i) {
-    	console.log(i);
-        context.fillText(line, 25 / 2, (i + 10) * parseInt(context.font,0));
-    	});
+  init();
+  
+      
     
 }
 

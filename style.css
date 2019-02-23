@@ -11,10 +11,10 @@ h1 {
   text-align: center;
 }
 
-span {
-  border-radius: 100px;
-  opacity: 0.75;
-  filter: alpha(opacity=75); /* For IE8 and earlier */
+canvas {
+  position:absolute;
+  left:0px;
+  top:50px;
 }
 
 #buttonDiv {
@@ -32,16 +32,7 @@ span {
 
 }
 
-#myCanvas {
-	  margin: 0;
-  padding: 0.5em;
-  list-style-type: none;
-  text-align: center;
-  top:0;
-  left:0;
-  right:0;
-  bottom:0; 
-}
+
 
 #buttonDiv ul li a {
   text-decoration: none;
@@ -49,11 +40,6 @@ span {
   background-color: black;
   opacity: 0.4;
   filter: alpha(opacity=40); /* For IE8 and earlier */
-}
-
-.hold {
-  width: 100%;
-  text-align: left;
 }
 
 #gen {
@@ -64,20 +50,17 @@ span {
   background-color: black;
   color: white;
   border: thin solid white;
-  height: 40px;
-  width: 100px;
+  height: 30px;
+  width: 90px;
   border-radius: 2px;
   transition: 0.5s;
   padding-bottom: 5px;
 }
 
 #gen:hover {
-  background-color: white;
+  background-color: grey;
   color: black;
   border: thin solid black;
   opacity: 0.8;
 }
 
-#gen a {
-  text-decoration: none;
-}

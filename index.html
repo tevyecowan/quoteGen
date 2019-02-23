@@ -5,14 +5,23 @@
 	<title>Quote Gen</title>
 	<meta charset="utf-8"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="style.css"> 
 </head>
 <body>
 	<h1>Simple Quote Generator</h1>
 	<div id="buttonDiv">
-		<canvas id="myCanvas"></canvas>
+		<canvas id="layer1"
+				style="z-index: 1;" 
+				height="500px" width="500">
+				This text is displayed if your browser does not support HTML5 Canvas.
+		</canvas>
+		<canvas id="layer2"
+				style="z-index: 2;"
+				height="500px" width="500">
+				This text is displayed if your browser does not support HTML5 Canvas.
+		</canvas>
+
 		<ul>
-	
 		<button id="gen", onclick="newQuote()">New Quote</button>
 		</ul>
 	</div>
