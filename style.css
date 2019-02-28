@@ -16,6 +16,7 @@ canvas {
   position:absolute;
   left:0px;
   top:50px;
+
 }
 
 #buttonDiv {
@@ -34,7 +35,7 @@ canvas {
   background-color: black;
   color: white;
   border: thin solid white;
-  height: 30px;
+  height: 50px;
   width: 90px;
   border-radius: 2px;
   transition: 0.5s;
@@ -48,7 +49,33 @@ canvas {
   opacity: 0.8;
 }
 
-canvas:hover {
+#form {
+
+}
+
+#submit {
+  outline: none;
+  padding-top: 5px;
+  text-decoration: none;
+  opacity: 0.6;
+  background-color: black;
+  color: white;
+  border: thin solid white;
+  height: 50px;
+  width: 90px;
+  border-radius: 2px;
+  transition: 0.5s;
+  padding-bottom: 5px;
+}
+
+#submit:hover{
+   background-color: grey;
+  color: black;
+  border: thin solid black;
+  opacity: 0.8;
+}
+
+/*canvas:hover {
   background-color: black;
   color: black;
   border: thin solid black;

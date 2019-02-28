@@ -39,6 +39,7 @@ var ctx2;
 var WIDTH = 500;
 var HEIGHT = 500;
 
+
 function init() {
 layer1 = document.getElementById("layer1");
 ctx1 = layer1.getContext("2d");
